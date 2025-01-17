@@ -45,14 +45,14 @@ export const navigationLinks = [
     email: "Email",
     universityId: "University ID Number",
     password: "Password",
-    universityCard: "Upload University ID Card",
+    profilePicture: "Profile Picture",
   };
   
   export const FIELD_TYPES = {
     fullName: "text",
     email: "email",
-    universityId: "number",
     password: "password",
+    profilePicture: "file",
   };
   
   export const sampleBooks = [

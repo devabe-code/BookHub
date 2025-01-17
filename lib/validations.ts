@@ -4,7 +4,8 @@ export const signUpSchema = z.object(
     {
         fullName: z.string().min(3),
         email: z.string().email(),
-        password: z.string().min(8)
+        password: z.string().min(8),
+        profilePicture: z.string().optional()
     }
 );
 
