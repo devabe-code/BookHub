@@ -15,7 +15,7 @@ export const sendEmail = async ({email, subject, message}: {email: string, subje
             provider: resend({ token: config.env.resendToken }),
         },
         body: {
-            from: "KrowTV <hello.krowtv.live>",
+            from: "KrowTV <contact@krowtv.live>",
                 to: [email],
                 subject: subject,
                 html: message,
