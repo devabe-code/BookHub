@@ -9,7 +9,7 @@ import Image from "next/image";
 const Home = async () =>  {
   return (
     <>
-      <BookOverview 
+      <BookOverview
         {...sampleBooks[0]}
       />
 
@@ -19,6 +19,7 @@ const Home = async () =>  {
         containerClassName="mt-28"
       />
     </>
+
   );
 }
 
