@@ -27,7 +27,6 @@ const Header = ({ session } : { session: Session }) => {
 
             <li>
                 <Link href='/my-profile'>
-                    <Image src={session?.user?.image || ''} alt='user-image' width={40} height={40} />
                     <Avatar>
                         <AvatarImage src={session?.user?.image || ''} />
                         <AvatarFallback className="text-white bg-amber-500">
