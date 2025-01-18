@@ -10,6 +10,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     strategy: "jwt",
   },
   providers: [
+    // CredentialsProvider is used for sign in with email and password
     CredentialsProvider({
         async authorize(credentials) {
             if (!credentials?.email || !credentials?.password) {
