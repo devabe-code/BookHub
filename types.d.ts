@@ -43,3 +43,16 @@ interface BookInsert {
     authorPhotoUrl: string;
     videoUrl: string;
 }
+
+interface BookReadParams {
+    bookId: string;
+    userId: string;
+    readAt: Date;
+    hasStarted: boolean;
+    hasFinished: boolean;
+}
+
+interface BookAddToLibraryParams {
+    bookId: string;
+    userId: string;
+}

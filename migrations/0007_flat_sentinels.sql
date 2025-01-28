@@ -1,0 +1,1 @@
+ALTER TABLE "book_library" DROP COLUMN "is_in_library";

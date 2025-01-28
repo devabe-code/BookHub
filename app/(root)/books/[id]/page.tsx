@@ -1,3 +1,4 @@
+import { auth } from '@/auth'
 import BookOverview from '@/components/BookOverview'
 import BookVideo from '@/components/BookVideo'
 import { db } from '@/database/drizzle'
@@ -8,6 +9,7 @@ import React from 'react'
 
 const Page = async ({ params } : {params: Promise<{id: string}>}) => {
   const id = (await params).id
+  const session = await auth();
 
   // Fetch data based on id
   const [bookDetails] = await db
@@ -21,7 +23,7 @@ const Page = async ({ params } : {params: Promise<{id: string}>}) => {
 
   return (
     <>
-        <BookOverview {...bookDetails} />
+        <BookOverview {...bookDetails} userId={session?.user?.id as string} />
 
         <div className="book-details">
             <div className="flex-[1.5]">

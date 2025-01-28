@@ -117,7 +117,7 @@
     @apply mt-2 text-justify text-xl text-light-100;
   }
 
-  .book-overview_btn {
+  .book_btn {
     @apply mt-4 min-h-14 w-fit bg-primary text-dark-100 hover:bg-primary/90 max-md:w-full !important;
   }
 

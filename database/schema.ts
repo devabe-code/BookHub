@@ -43,3 +43,18 @@ export const books = pgTable("books", {
     createdAt: timestamp("createdAt", { withTimezone: true }).defaultNow(),
     updatedAt: timestamp("updatedAt", { withTimezone: true }).defaultNow(),
 });
+
+export const bookReads = pgTable("book_reads", {
+    id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+    bookId: uuid("book_id").references(() => books.id),
+    userId: uuid("user_id").references(() => users.id),
+    lastReadAt: timestamp("last_read_at", { withTimezone: true }).defaultNow(),
+    hasStarted: boolean("has_started").notNull().default(false),
+    hasFinished: boolean("has_finished").notNull().default(false),
+});
+
+export const bookLibrary = pgTable("book_library", {
+    id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+    bookId: uuid("book_id").references(() => books.id),
+    userId: uuid("user_id").references(() => users.id),
+});

@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import React from 'react'
 import BookCoverSvg from './BookCoverSvg';
 import { IKImage } from 'imagekitio-next';
@@ -43,7 +42,7 @@ const BookCover = ({
     >
         <BookCoverSvg coverColor={coverColor} />
 
-        <div className="absolute z-10 hover:scale-105" style={{ left: '12%', width:'87.5%', height: '88%'}}>
+        <div className="absolute z-10" style={{ left: '12%', width:'87.5%', height: '88%'}}>
             <IKImage 
                 path={coverImage}
                 urlEndpoint={config.env.imagekit.urlEndpoint} 

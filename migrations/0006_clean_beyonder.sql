@@ -1,0 +1,1 @@
+ALTER TABLE "book_library" ADD COLUMN "is_in_library" boolean DEFAULT false NOT NULL;

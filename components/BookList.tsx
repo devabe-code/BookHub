@@ -1,13 +1,16 @@
 import React from 'react'
 import BookCard from './BookCard';
+import BookOptions from './BookOptions';
 
 interface Props {
     title: string;
     books: Book[];
     containerClassName?: string;
+    userId: string;
+    isReadingList: boolean;
 }
 
-const BookList = ({ title, books, containerClassName }: Props) => {
+const BookList = ({ title, books, containerClassName, userId, isReadingList }: Props) => {
   if (books.length < 2) return;
 
   return (
@@ -16,8 +19,7 @@ const BookList = ({ title, books, containerClassName }: Props) => {
 
         <ul className='book-list'>
             {books.map((book) => (
-                console.log(book),
-                <BookCard key={book.title} {...book} />
+                <BookOptions book={book} userId={userId} isReadingList={isReadingList} />
             ))}
         </ul>
     </section>
