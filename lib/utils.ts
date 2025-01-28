@@ -1,3 +1,4 @@
+// For cn
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -10,4 +11,8 @@ export const getInitials = (name: string) => {
   const firstNameInitial = nameParts[0].charAt(0);
   const lastNameInitial = nameParts[nameParts.length - 1].charAt(0);
   return `${firstNameInitial}${lastNameInitial}`;
+}
+
+export const getIdFromKey = (key: string) => {
+  return key.split("/")[2];
 }

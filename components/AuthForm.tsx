@@ -21,8 +21,8 @@ import {
 import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 import { FIELD_NAMES, FIELD_TYPES } from '@/constants'
-import ProfilePicture from './ProfilePicture'
 import { toast } from '@/hooks/use-toast'
+import FileUpload from './FileUpload'
 
 interface Props<T extends FieldValues> {
     schema: ZodType<T>;
@@ -83,9 +83,13 @@ const AuthForm = <T extends FieldValues>(
                     <FormLabel className='capitalize'>{FIELD_NAMES[field.name as keyof typeof FIELD_NAMES]}</FormLabel>
                     <FormControl>
                         {field.name === 'profilePicture' ? (
-                            <ProfilePicture
-                                onFileChange={field.onChange}
-                             />
+                            <FileUpload
+                                    onFileChange={field.onChange} 
+                                    type={'image'}
+                                    accept={"image/*"} 
+                                    placeholder={"Upload a profile picture"} 
+                                    folder={'bookhub/profile-pictures'} 
+                                    variant={'dark'}                             />
                         ) : (
                             <Input 
                                 required 
